@@ -23,12 +23,33 @@ body {
 }
 
 #container {
-  font-size: 36px;
-  -webkit-box-reflect: left;
+  /* -webkit-box-reflect: left; */
   /* writing-mode: vertical-lr; */
-  width: 10ch;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-flow: column wrap;
+  flex-flow: row;
+  width: 70vw;
+  margin-top: 40%;
+}
+
+p {
+  margin: 0 8px;
+  box-sizing: border-box;
+  font-size: 24px;
+  max-width: 50%;
+  /* line-break: anywhere;
+  white-space: pre-line; */
+  /* overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto; */
+}
+
+#left {
+  font-style: italic;
+  text-align: right;
+}
+
+#right {
+  text-align: left;
 }
