@@ -8,7 +8,7 @@ window.addEventListener("load", () => {
   let words = [];
   let int;
   let poem = [];
-  let r = getRandomInt(7, 25);
+  let r = getRandomInt(7, 20);
   const left = document.getElementById("left");
   const right = document.getElementById("right");
 
@@ -25,7 +25,7 @@ window.addEventListener("load", () => {
           right.innerHTML += l;
           left.style.maxWidth = "50%";
           right.style.maxWidth = "50%";
-        }, wt+=getRandomInt(100,250));
+        }, wt+=getRandomInt(75, 250));
       });
       r--;
     } else {
@@ -39,12 +39,26 @@ window.addEventListener("load", () => {
     words = d;
   });
 
-  let t = 1000;
   int = setInterval(() => {
     typewrite();
-    if (Math.random()>0.5) {
+    if (Math.random()>0.4) {
       left.innerHTML += "<br>";
       right.innerHTML += "<br>";
     }
-  }, t);
+  }, 1200);
 });
+
+// let arrA = [];
+// let arrB = [];
+// temp1.forEach((w) => {
+//     if (w.length < 1) return;
+//     let reversed = w.split("").reduce((acc, char) => char + acc, "");
+//   if (!arrA.includes(reversed)) {
+//       arrA.push(w);
+//   } else if (!arrB.includes(w)) { // if reverse has been seen once, but first time seeing word
+//       arrB.push(w);
+//       console.log(w);
+//   } else {
+//       arrA.push(w);
+//   }
+// })

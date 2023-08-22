@@ -59,6 +59,6 @@ p {
 }
 
 #right {
-  /* font-style: italic; */
+  font-style: italic;
   text-align: left;
 }
