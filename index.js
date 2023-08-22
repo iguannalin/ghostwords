@@ -12,11 +12,12 @@ window.addEventListener("load", () => {
   const left = document.getElementById("left");
   const right = document.getElementById("right");
 
-  let t = 10;
   function typewrite() {
     if (r > 0) {
       let rword = words[getRandomInt(0, words.length)];
       while (poem.includes(rword)) rword = words[getRandomInt(0, words.length)];
+      poem.push(rword);
+      let wt = 0;
       rword.split("").forEach((l, index) => {
         setTimeout(() => {
           if (index == rword.length - 1) l += "&nbsp;";
@@ -24,13 +25,9 @@ window.addEventListener("load", () => {
           right.innerHTML += l;
           left.style.maxWidth = "50%";
           right.style.maxWidth = "50%";
-        }, t+=getRandomInt(5,100));
-      })
+        }, wt+=getRandomInt(100,250));
+      });
       r--;
-      if (Math.random()>0.5) {
-        left.innerHTML += "<br>";
-        right.innerHTML += "<br>";
-      }
     } else {
       clearInterval(int);
     }
@@ -42,5 +39,12 @@ window.addEventListener("load", () => {
     words = d;
   });
 
-  int = setInterval(typewrite, t+=300);
+  let t = 1000;
+  int = setInterval(() => {
+    typewrite();
+    if (Math.random()>0.5) {
+      left.innerHTML += "<br>";
+      right.innerHTML += "<br>";
+    }
+  }, t);
 });
